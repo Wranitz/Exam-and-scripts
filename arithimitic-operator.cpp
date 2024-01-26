@@ -1,4 +1,6 @@
+#include <cmath>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -18,7 +20,8 @@ int main() {
   // students = students / 3;
   // students /= 3;
 
-  int remainder = students % 3;
+  int remainder = students % 4;
+
   cout << remainder << '\n';
 
   cout << students << '\n';
