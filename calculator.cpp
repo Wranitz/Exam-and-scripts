@@ -2,9 +2,10 @@
 
 using namespace std;
 
-float doubleInpu(float, float);
-float singleInpu(float);
+float inputOne(float);
+float inputTwo(float);
 void answe(float);
+void recuInpt();
 
 int main() {
 
@@ -21,20 +22,25 @@ int main() {
 
   switch (operato) {
   case '+':
-    doubleInpu(firstNumber, secondNumber);
-    cout << firstNumber << endl;
+    firstNumber = inputOne(number);
+    secondNumber = inputTwo(number);
     result = firstNumber + secondNumber;
     answe(result);
     break;
 
   case '-':
+    firstNumber = inputOne(number);
+    secondNumber = inputTwo(number);
+    result = firstNumber - secondNumber;
+    answe(result);
+    break;
 
   case '/':
 
   case '*':
 
   case '1':
-    number = singleInpu(number);
+    number = inputOne(number);
     answe(number * number);
     break;
   case '2':
@@ -49,18 +55,22 @@ int main() {
   return 0;
 }
 
-float doubleInpu(float firstNumbe, float secondNumbe) {
-  cout << "Enter First Number: " << endl;
-  cin >> firstNumbe;
-  cout << "Enter Second Number: " << endl;
-  cin >> secondNumbe;
-  return (firstNumbe, secondNumbe);
-};
+void answe(float res) { cout << "The result is : " << res << endl; };
 
-void answe(float res) { cout << "The result is : " << res << endl; }
-
-float singleInpu(float num) {
+float inputOne(float num) {
   cout << "Enter a Number:" << endl;
   cin >> num;
   return num;
+};
+
+float inputTwo(float num){
+  cout <<"Enter another number:" << endl;
+  cin >> num;
+  return num;
+};
+
+void recuInpt(){
+  cout << "dbug" << endl;
+  //firstNumber = inputOne(number);
+  //secondNumber = inputTwo(number);
 }
