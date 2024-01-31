@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 
 using namespace std;
@@ -17,7 +18,7 @@ int main() {
 
   cout << "#################### CALCULATOR #####################" << '\n';
   cout << "Choose one of the option:";
-  cout << "+ - / * square=1 squareroot=2 modulus=3" << '\n';
+  cout << "+ - / * square=1 squareroot=2 modulus(by2)=3" << '\n';
   cin >> operato;
 
   switch (operato) {
@@ -36,16 +37,33 @@ int main() {
     break;
 
   case '/':
+    firstNumber = inputOne(number);
+    secondNumber = inputTwo(number);
+    result = firstNumber / secondNumber;
+    answe(result);
+    break;
 
   case '*':
+    firstNumber = inputOne(number);
+    secondNumber = inputTwo(number);
+    result = firstNumber * secondNumber;
+    answe(result);
+    break;
 
   case '1':
     number = inputOne(number);
     answe(number * number);
     break;
+
   case '2':
+    number = inputOne(number);
+    answe(sqrt(number));
+    break;
 
   case '3':
+    number = inputOne(number);
+    answe(static_cast<int>(number) % 2);
+    break;
 
   default:
     cout << "That wasnt a valid responce" << endl;
@@ -63,14 +81,14 @@ float inputOne(float num) {
   return num;
 };
 
-float inputTwo(float num){
-  cout <<"Enter another number:" << endl;
+float inputTwo(float num) {
+  cout << "Enter another number:" << endl;
   cin >> num;
   return num;
 };
 
-void recuInpt(){
+void recuInpt() {
   cout << "dbug" << endl;
-  //firstNumber = inputOne(number);
-  //secondNumber = inputTwo(number);
+  // firstNumber = inputOne(number);
+  // secondNumber = inputTwo(number);
 }
